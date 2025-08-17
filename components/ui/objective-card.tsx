@@ -11,7 +11,7 @@ interface ObjectiveCardProps {
 }
 
 export function ObjectiveCard({ name, targetAmount, currentAmount, deadline, category }: ObjectiveCardProps) {
-  const progress = (currentAmount / targetAmount) * 100;
+  const progress = targetAmount > 0 ? (currentAmount / targetAmount) * 100 : 0;
   const formattedTarget = new Intl.NumberFormat('fr-FR').format(targetAmount);
   const formattedCurrent = new Intl.NumberFormat('fr-FR').format(currentAmount);
   const formattedDeadline = new Date(deadline).toLocaleDateString('fr-FR');
