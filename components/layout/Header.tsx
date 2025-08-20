@@ -1,10 +1,12 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Banknote, Menu, X } from 'lucide-react';
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Banknote, Menu, X } from "lucide-react";
+ 
+
 
 const navigation = [
   { name: 'Accueil', href: '/' },
@@ -45,8 +47,11 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Desktop Auth Buttons */}
+          {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
+            <Link href="/bank-selection">
+              <Button variant="outline" size="sm">Choisir une banque</Button>
+            </Link>
             <Link href="/login">
               <Button variant="outline" size="sm">Se connecter</Button>
             </Link>
@@ -89,6 +94,9 @@ export default function Header() {
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
+                <Link href="/bank-selection" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button variant="outline" className="w-full">Choisir une banque</Button>
+                </Link>
                 <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button variant="outline" className="w-full">Se connecter</Button>
                 </Link>

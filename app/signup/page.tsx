@@ -8,8 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { banksData } from '@/lib/mockData';
 
 export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -17,8 +15,7 @@ export default function SignUpPage() {
     name: '',
     email: '',
     phone: '',
-    password: '',
-    bank: ''
+    password: ''
   });
   const router = useRouter();
 
@@ -85,21 +82,7 @@ export default function SignUpPage() {
               />
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="bank">Banque partenaire</Label>
-              <Select onValueChange={(value) => handleInputChange('bank', value)} required>
-                <SelectTrigger>
-                  <SelectValue placeholder="Sélectionnez votre banque" />
-                </SelectTrigger>
-                <SelectContent>
-                  {banksData.map((bank) => (
-                    <SelectItem key={bank.id} value={bank.name}>
-                      {bank.name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+            {/* Sélection de la banque retirée du formulaire d'inscription. */}
 
             <div className="space-y-2">
               <Label htmlFor="password">Mot de passe</Label>

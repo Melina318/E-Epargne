@@ -52,7 +52,7 @@ export default function HomePage() {
                 Définissez vos objectifs, suivez vos progrès et réalisez vos rêves financiers.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/signup">
+                <Link href="/bank-selection">
                   <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-3">
                     Créer un compte
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -140,7 +140,7 @@ export default function HomePage() {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Rejoignez des milliers d'utilisateurs qui ont déjà transformé leur façon d'épargner
             </p>
-            <Link href="/signup">
+            <Link href="/bank-selection">
               <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-3">
                 Créer mon compte gratuitement
                 <ArrowRight className="ml-2 h-5 w-5" />
